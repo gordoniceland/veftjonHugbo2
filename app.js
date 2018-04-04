@@ -30,19 +30,19 @@ var url = 'mongodb://heroku_ct52v3t8:55paqv3nnehlj3kgn6f1h9e5mr@dds235169.mlab.c
     console.log('Connection established to', url);
 
     // do some work here with the database.
+    mongoose.connect(url);
 
+    //configure body-parser
+    app.use(bodyParser.json());
+    //app.use(bodyParser.urlencoded());
+    app.use(bodyParser.urlencoded({extended: false}));
+    app.use('/api', questions); //This is our route middleware
     //Close connection
     db.close();
   }
 });
 
 
-mongoose.connect(url);
 
-//configure body-parser
-app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use('/api', questions); //This is our route middleware
 
 module.exports = app;
