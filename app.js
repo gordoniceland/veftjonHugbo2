@@ -1,5 +1,5 @@
 /**
- * Created by Karítas Sif
+ * Created by Karítas Sif 
  */
 
 // Load Our Modules
@@ -17,11 +17,15 @@ var MongoClient = mongodb.MongoClient;
 //Ideally you will obtain DB details from a config file
 
 var dbName = 'questionDB';
-var connectionString = 'mongodb://localhost:27017/' + dbName;
+//var connectionString = 'mongodb://localhost:27017/' + dbName;
 
+mongoURI = 'mongodb://localhost:27017/' + dbName;
 
+MONGOLAB_URI = "mongodb://karo27:olkelduhals27@ds135179.mlab.com:35179/gordon"
 
-mongoose.connect(connectionString);
+mongoose.connect(mongoURI ||  MONGOLAB_URI)
+
+//mongoose.connect(connectionString);
 
 //configure body-parser
 app.use(bodyParser.json());
