@@ -1,5 +1,5 @@
 /**
- * Created by Sandeep on 01/06/14.
+ * Created by Karítas Sif 
  */
 
 // Load Our Modules
@@ -15,7 +15,9 @@ var app = express(); //Create the Express app
 //Ideally you will obtain DB details from a config file
 
 var dbName = 'questionDB';
-var connectionString = 'mongodb://localhost:27017/' + dbName;
+var connectionString = 'mongodb://dbuser:dbpass@host:port/' + dbName;
+
+
 
 mongoose.connect(connectionString);
 
