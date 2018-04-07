@@ -21,9 +21,9 @@ var dbName = 'questionDB';
 
 mongoURI = 'mongodb://localhost:27017/' + dbName;
 
-MONGOLAB_URI = "mongodb://karitas:123456@ds235169.mlab.com:35169/gordon"
+MONGOLAB_URI = "mongodb://karitas_hugbo:123@ds235169.mlab.com:35169/gordon"
 
-mongoose.connect(mongoURI ||  MONGOLAB_URI)
+mongoose.connect( MONGOLAB_URI)
 
 //mongoose.connect(connectionString);
 
@@ -36,3 +36,4 @@ app.use('/api', questions); //This is our route middleware
 module.exports = app;
 
 
+// test 
