@@ -3,9 +3,9 @@ var Schema=mongoose.Schema;
 
 var questionSchema = new Schema({
     title: String,
-    releaseYear:'String',
-    director:'String',
-    genre:'String'
+    company:'String',
+    department:'String',
+    score:'String'
 });
 
 module.exports = mongoose.model('Question', questionSchema);
