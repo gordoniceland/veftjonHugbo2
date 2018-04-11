@@ -2,7 +2,7 @@ var Question = require('../models/question');
 var express = require('express');
 var router = express.Router();
 
-router.route('/questions/:score').get(function(req, res) {
+router.route('/questions').get(function(req, res) {
     Question.find(function(err, questions) {
       if (err) {
         console.log("err");
@@ -77,6 +77,17 @@ router.route('/questions/:id').get(function(req, res) {
     res.json(question);
   });
 });
+
+router.route('/questions/:score').get(function(req, res) {
+  Question.findOne({ score: req.params.score}, function(err, question) {
+    if (err) {
+      return res.send(err);
+    }
+
+    res.json(question);
+  });
+});
+
 
 router.route('/questions/:id').delete(function(req, res) {
   Question.remove({
