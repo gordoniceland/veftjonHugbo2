@@ -78,7 +78,7 @@ router.route('/questions/:id').get(function(req, res) {
   });
 });
 
-router.route('/questions/users/:score').get(function(req, res) {
+/*router.route('/questions/users/:score').get(function(req, res) {
   Question.findOne({_score: req.params.score}, function(err, question) {
     if (err) {
       return res.send(err);
@@ -87,19 +87,18 @@ router.route('/questions/users/:score').get(function(req, res) {
     res.json(question);
   });
 });
+*/
 
-/*
 router.route('/questions/users/:score').get(function(req, res) {
   const { score } = req.params;
 
-  const item = Question.find(i => i.score === score);
+  const item = Question.findOne({_score: req.params.score}, function(err, question) {
+    if (err) {
+      return res.send(err);
+    }
 
-  if (item) {
-    return res.json(item);
-  }
-
-  res.status(404).json({ error: 'Not found' });
-});*/
+    res.json(item);
+});
 
 
 router.route('/questions/:id').delete(function(req, res) {
