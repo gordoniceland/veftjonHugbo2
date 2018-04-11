@@ -78,16 +78,17 @@ router.route('/questions/:id').get(function(req, res) {
   });
 });
 
-/*router.route('/questions/users/:score').get(function(req, res) {
-  Question.findOne({score: req.params.score}, function(err, question) {
+router.route('/questions/users/:score').get(function(req, res) {
+  Question.findOne({_score: req.params.score}, function(err, question) {
     if (err) {
       return res.send(err);
     }
 
     res.json(question);
   });
-});*/
+});
 
+/*
 router.route('/questions/users/:score').get(function(req, res) {
   const { score } = req.params;
 
@@ -98,7 +99,7 @@ router.route('/questions/users/:score').get(function(req, res) {
   }
 
   res.status(404).json({ error: 'Not found' });
-});
+});*/
 
 
 router.route('/questions/:id').delete(function(req, res) {
