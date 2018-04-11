@@ -78,8 +78,8 @@ router.route('/questions/:id').get(function(req, res) {
   });
 });
 
-router.route('/questions/score').get(function(req, res) {
-  Question.findOne({ score: req.params.score}, function(err, question) {
+router.route('/questions/:score').get(function(req, res) {
+  Question.findOne({_score: req.params.score}, function(err, question) {
     if (err) {
       return res.send(err);
     }
