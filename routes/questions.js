@@ -2,7 +2,7 @@ var Question = require('../models/question');
 var express = require('express');
 var router = express.Router();
 
-router.route('/questions/:email').get(function(req, res) {
+router.route('/questions/:score').get(function(req, res) {
     Question.find(function(err, questions) {
       if (err) {
         console.log("err");
