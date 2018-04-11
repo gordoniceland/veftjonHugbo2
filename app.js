@@ -21,7 +21,7 @@ var dbName = 'questionDB';
 
 mongoURI = 'mongodb://localhost:27017/' + dbName;
 
-MONGOLAB_URI = "mongodb://karitas_hugbo:123@ds235169.mlab.com:35169/gordon"
+MONGOLAB_URI = "mongodb://karitas:123@ds235169.mlab.com:35169/veftjon"
 
 mongoose.connect( MONGOLAB_URI)
 
