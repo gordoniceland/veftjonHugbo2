@@ -47,7 +47,7 @@ router.route('/questions')
     });
 });
 
-/*router.route('/questions/:id').put(function(req,res){
+router.route('/questions/:id').put(function(req,res){
   Question.findOne({ _id: req.params.id }, function(err, question) {
     if (err) {
       return res.send(err);
@@ -76,7 +76,7 @@ router.route('/questions/:id').get(function(req, res) {
 
     res.json(question);
   });
-});*/
+});
 
 router.route('/questions/:score').get(function(req, res) {
   Question.findOne({score: req.params.score}, function(err, question) {
@@ -88,7 +88,7 @@ router.route('/questions/:score').get(function(req, res) {
   });
 });
 
-/*
+
 router.route('/questions/:id').delete(function(req, res) {
   Question.remove({
     _id: req.params.id
@@ -100,5 +100,5 @@ router.route('/questions/:id').delete(function(req, res) {
     res.json({ message: 'Successfully deleted' });
   });
 });
-*/
+
 module.exports = router;
