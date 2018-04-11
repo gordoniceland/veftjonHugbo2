@@ -16,10 +16,10 @@ var MongoClient = mongodb.MongoClient;
 //connect to our database
 //Ideally you will obtain DB details from a config file
 
-var dbName = 'questionDB';
+//var dbName = 'questionDB';
 //var connectionString = 'mongodb://localhost:27017/' + dbName;
 
-mongoURI = 'mongodb://localhost:27017/' + dbName;
+//mongoURI = 'mongodb://localhost:27017/' + dbName;
 
 MONGOLAB_URI = "mongodb://Karitas_hugbo:1234@ds263367.mlab.com:63367/veftjon"
 
