@@ -88,7 +88,7 @@ router.route('/questions/:id').get(function(req, res) {
   });
 });*/
 
-router.get('/questions/users/:score', (req, res) => {
+router.route('/questions/users/:score').get(function(req, res) {
   const { score } = req.params;
 
   const item = Question.find(i => i.score === score);
