@@ -8,4 +8,14 @@ var questionSchema = new Schema({
     score:'String'
 });
 
+var questionText = new Schema({
+    question: String,
+    always:'int',
+    usually:'int',
+    sometimes:'int',
+    rarely:'int',
+    never:'int'
+});
+
+
 module.exports = mongoose.model('Question', questionSchema);
