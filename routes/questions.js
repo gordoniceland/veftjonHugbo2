@@ -26,14 +26,14 @@ router.route('/questions').post(function(req, res) {
 });
 
 router.route('/questionstext').post(function(req, res) {
-  var question = new Question(req.body);
+  var questiontext = new QuestionText(req.body);
 
-  question.save(function(err) {
+  questionText.save(function(err) {
     if (err) {
       return res.send(err);
     }
 
-    res.send({ message: 'Question Added' });
+    res.send({ message: 'QuestionText Added' });
   });
 });
 
@@ -56,6 +56,28 @@ router.route('/questions')
       }
 
       res.send({ message: 'Question Added' });
+    });
+});
+
+router.route('/questionstext')
+  .get(function(req, res) {
+    QuestionText.find(function(err, questions) {
+      if (err) {
+        return res.send(err);
+      }
+
+      res.json(questions);
+    });
+  })
+  .post(function(req, res) {
+    var questiontext = new QuestionText(req.body);
+
+    questiontext.save(function(err) {
+      if (err) {
+        return res.send(err);
+      }
+
+      res.send({ message: 'QuestionText Added' });
     });
 });
 
