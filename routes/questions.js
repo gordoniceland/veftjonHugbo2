@@ -1,4 +1,5 @@
 var Question = require('../models/question');
+//var QuestionText = require('../models/questiontext');
 var express = require('express');
 var router = express.Router();
 
@@ -63,7 +64,7 @@ router.route('/questions')
 
 router.route('/questionstext')
   .get(function(req, res) {
-    QuestionText.find(function(err, questions) {
+    Question.find(function(err, questions) {
       if (err) {
         return res.send(err);
       }
