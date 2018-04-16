@@ -28,9 +28,9 @@ router.route('/questions').post(function(req, res) {
 
 
 router.route('/questionstext').post(function(req, res) {
-  var questiontext = new QuestionText(req.body);
+  var question = new Question(req.body);
 
-  questionText.save(function(err) {
+  question.save(function(err) {
     if (err) {
       return res.send(err);
     }
@@ -73,9 +73,9 @@ router.route('/questionstext')
     });
   })
   .post(function(req, res) {
-    var questiontext = new QuestionText(req.body);
+    var question = new Question(req.body);
 
-    questiontext.save(function(err) {
+    question.save(function(err) {
       if (err) {
         return res.send(err);
       }
