@@ -6,7 +6,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var questions = require('./routes/questions'); //routes are defined here
+var questions = require('./routes/questions');//routes are defined here
 var app = express(); //Create the Express app
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
@@ -29,6 +29,6 @@ mongoose.connect(MONGOLAB_URI)
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded());
 app.use(bodyParser.urlencoded({extended: false}));
-app.use('/api', questions); //This is our route middleware
+app.use('/api', questions || questionstext); //This is our route middleware
 
 module.exports = app;
