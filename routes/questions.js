@@ -25,6 +25,7 @@ router.route('/questions').post(function(req, res) {
     });
 });
 
+
 router.route('/questionstext').post(function(req, res) {
   var questiontext = new QuestionText(req.body);
 
@@ -36,6 +37,7 @@ router.route('/questionstext').post(function(req, res) {
     res.send({ message: 'QuestionText Added' });
   });
 });
+
 
 router.route('/questions')
   .get(function(req, res) {
@@ -77,9 +79,10 @@ router.route('/questionstext')
         return res.send(err);
       }
 
-      res.send({ message: 'QuestionText Added' });
+      res.send({ message: 'QuestionTexter Added' });
     });
 });
+
 
 router.route('/questions/:id').put(function(req,res){
   Question.findOne({ _id: req.params.id }, function(err, question) {

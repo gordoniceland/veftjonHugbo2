@@ -10,14 +10,14 @@ var questionSchema = new Schema({
 
 var questionText = new Schema({
     question: String,
-    always:'int',
-    usually:'int',
-    sometimes:'int',
-    rarely:'int',
-    never:'int'
+    always:'string',
+    usually:'string',
+    sometimes:'string',
+    rarely:'string',
+    never:'string'
 });
 
 
-module.exports = mongoose.model('Question', questionSchema, questionText);
+module.exports = mongoose.model('Question', questionSchema);
 
-//module.exports = mongoose.model('Questiontext', questionText);
+module.exports = mongoose.model('Questiontext', questionText);

@@ -11,8 +11,6 @@ var app = express(); //Create the Express app
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
-
-
 //connect to our database
 //Ideally you will obtain DB details from a config file
 
@@ -23,7 +21,7 @@ var MongoClient = mongodb.MongoClient;
 
 MONGOLAB_URI = "mongodb://Karitas_hugbo:1234@ds263367.mlab.com:63367/veftjon"
 
-mongoose.connect( MONGOLAB_URI)
+mongoose.connect(MONGOLAB_URI)
 
 //mongoose.connect(connectionString);
 
@@ -34,6 +32,3 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use('/api', questions); //This is our route middleware
 
 module.exports = app;
-
-
-// test 
