@@ -19,3 +19,5 @@ var questionText = new Schema({
 
 
 module.exports = mongoose.model('Question', questionSchema);
+
+module.exports = mongoose.model('Questiontext', questionText);
