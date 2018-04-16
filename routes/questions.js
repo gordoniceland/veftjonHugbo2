@@ -25,6 +25,18 @@ router.route('/questions').post(function(req, res) {
     });
 });
 
+router.route('/questionstext').post(function(req, res) {
+  var question = new Question(req.body);
+
+  question.save(function(err) {
+    if (err) {
+      return res.send(err);
+    }
+
+    res.send({ message: 'Question Added' });
+  });
+});
+
 router.route('/questions')
   .get(function(req, res) {
     Question.find(function(err, questions) {
@@ -76,28 +88,6 @@ router.route('/questions/:id').get(function(req, res) {
 
     res.json(question);
   });
-});
-
-/*router.route('/questions/users/:score').get(function(req, res) {
-  Question.findOne({_score: req.params.score}, function(err, question) {
-    if (err) {
-      return res.send(err);
-    }
-
-    res.json(question);
-  });
-});
-*/
-
-router.route('/questions/users/:score').get(function(req, res) {
-  const { score } = req.params;
-
-  const item = Question.findOne({_score: req.params.score}, function(err, question) {
-    if (err) {
-      return res.send(err);
-    }
-
-    res.json(item);
 });
 
 
