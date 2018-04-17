@@ -1,5 +1,5 @@
 var Question = require('../models/question');
-//var QuestionText = require('../models/questiontext');
+var QuestionText = require('../models/questiontext');
 var express = require('express');
 var router = express.Router();
 
@@ -28,9 +28,9 @@ router.route('/questions').post(function(req, res) {
 
 
 router.route('/questionstext').post(function(req, res) {
-  var question = new Question(req.body);
+  var questiontext = new QuestionText(req.body);
 
-  question.save(function(err) {
+  questiontext.save(function(err) {
     if (err) {
       return res.send(err);
     }
@@ -64,7 +64,7 @@ router.route('/questions')
 
 router.route('/questionstext')
   .get(function(req, res) {
-    Question.find(function(err, questions) {
+    QuestionText.find(function(err, questions) {
       if (err) {
         return res.send(err);
       }
@@ -73,9 +73,9 @@ router.route('/questionstext')
     });
   })
   .post(function(req, res) {
-    var question = new Question(req.body);
+    var questiontext = new QuestionText(req.body);
 
-    question.save(function(err) {
+    questiontext.save(function(err) {
       if (err) {
         return res.send(err);
       }

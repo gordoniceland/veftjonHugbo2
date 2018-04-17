@@ -7,7 +7,7 @@ var questionSchema = new Schema({
     department:'String',
     score:'String'
 });
-
+/*
 var questionText = new Schema({
     question: String,
     number: 'string',
@@ -17,8 +17,8 @@ var questionText = new Schema({
     rarely:'string',
     never:'string'
 });
-
+*/
 
 module.exports = mongoose.model('Question', questionSchema);
 
-module.exports = mongoose.model('Questiontext', questionText);
+//module.exports = mongoose.model('Questiontext', questionText);
