@@ -21,7 +21,10 @@ var MongoClient = mongodb.MongoClient;
 
 //MONGOLAB_URI = "mongodb://Karitas_hugbo:1234@ds263367.mlab.com:63367/veftjon"
 
-MONGOLAB_URI = "mongodb://hugbo:1234@ds147469.mlab.com:47469/gordon"
+MONGOLAB_URI = "mongodb://hugbo:1234@ds247479.mlab.com:47479/hugbo"
+
+
+
 
 mongoose.connect(MONGOLAB_URI)
 
