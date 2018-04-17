@@ -12,5 +12,4 @@ var questionText = new Schema({
     never:'string'
 });
 
-
 module.exports = mongoose.model('Questiontext', questionText);

@@ -1,5 +1,6 @@
 var Question = require('../models/question');
 var QuestionText = require('../models/questiontext');
+var User = require('../models/user')
 var express = require('express');
 var router = express.Router();
 
@@ -36,6 +37,18 @@ router.route('/questionstext').post(function(req, res) {
     }
 
     res.send({ message: 'QuestionText Added' });
+  });
+});
+
+router.route('/user').post(function(req, res) {
+  var user = new User(req.body);
+
+  user.save(function(err) {
+    if (err) {
+      return res.send(err);
+    }
+
+    res.send({ message: 'User Added' });
   });
 });
 
@@ -83,6 +96,29 @@ router.route('/questionstext')
       res.send({ message: 'QuestionTexter Added' });
     });
 });
+
+router.route('/user')
+  .get(function(req, res) {
+    User.find(function(err, questions) {
+      if (err) {
+        return res.send(err);
+      }
+
+      res.json(questions);
+    });
+  })
+  .post(function(req, res) {
+    var user = new User(req.body);
+
+    user.save(function(err) {
+      if (err) {
+        return res.send(err);
+      }
+
+      res.send({ message: 'User Added' });
+    });
+});
+
 
 
 router.route('/questions/:id').put(function(req,res){
