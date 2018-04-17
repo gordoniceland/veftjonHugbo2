@@ -11,24 +11,11 @@ var app = express(); //Create the Express app
 var mongodb = require('mongodb');
 var MongoClient = mongodb.MongoClient;
 
-//connect to our database
-//Ideally you will obtain DB details from a config file
-
-//var dbName = 'questionDB';
-//var connectionString = 'mongodb://localhost:27017/' + dbName;
-
-//mongoURI = 'mongodb://localhost:27017/' + dbName;
-
-//MONGOLAB_URI = "mongodb://Karitas_hugbo:1234@ds263367.mlab.com:63367/veftjon"
+//connect to our database store the db on mlab
 
 MONGOLAB_URI = "mongodb://hugbo:1234@ds247479.mlab.com:47479/hugbo"
 
-
-
-
 mongoose.connect(MONGOLAB_URI)
-
-//mongoose.connect(connectionString);
 
 //configure body-parser
 app.use(bodyParser.json());
