@@ -13,7 +13,7 @@ var MongoClient = mongodb.MongoClient;
 
 //connect to our database store the db on mlab
 
-MONGOLAB_URI = "mongodb://hugbo:1234@ds247479.mlab.com:47479/hugbo"
+MONGOLAB_URI = "mongodb://hugbo:1234@ds111078.mlab.com:11078/gordon"
 
 mongoose.connect(MONGOLAB_URI)
 
