@@ -10,6 +10,7 @@ var questionSchema = new Schema({
 
 var questionText = new Schema({
     question: String,
+    number: 'string',
     always:'string',
     usually:'string',
     sometimes:'string',
